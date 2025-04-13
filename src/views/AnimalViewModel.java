@@ -1,4 +1,3 @@
-
 package views;
 
 import domain.Carnivoro;
@@ -9,6 +8,7 @@ import domain.Mamifero;
 public class AnimalViewModel{
 
     private String especie;
+    private String pais;
     private int edad;
     private String sector;
     private double peso;
@@ -18,6 +18,7 @@ public class AnimalViewModel{
     public AnimalViewModel(Mamifero animal) {
         if(animal == null) return;
         especie = animal.getEspecie().getNombre();
+        pais = animal.getPais();
         edad = animal.getEdad();
         sector = animal.getSector().toString();
         peso = animal.getPeso();
@@ -27,6 +28,10 @@ public class AnimalViewModel{
 
     public String getEspecie() {
         return especie;
+    }
+    
+    public String getPais() {
+        return pais;
     }
 
     public int getEdad() {
